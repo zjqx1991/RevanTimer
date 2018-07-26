@@ -22,12 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self timerBlockTest];
+}
+
+- (void)timerBlockTest {
     __weak typeof(self) weakSelf = self;
     self.name = [RevanTimer revan_timerWithTimeStart:0 interval:1 repeats:YES async:NO block:^{
         [weakSelf timerFire];
     }];
-
-    
 }
 
 - (void)timerTargetTest {
